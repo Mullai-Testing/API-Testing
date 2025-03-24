@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "3af92913-1bca-464e-acc1-4b7560c4bfcd",
+		"name": "week1-day3-work",
+		"description": "Create a New Incident",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43317209",
+		"_collection_link": "https://cloudy-desert-286766.postman.co/workspace/8d15b710-4eb8-4abd-9866-bf98e7ecfddc/collection/43317209-3af92913-1bca-464e-acc1-4b7560c4bfcd?action=share&source=collection_link&creator=43317209"
+	},
+	"item": [
+		{
+			"name": "Create_a_New_Incident_json",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "t/xhS8Pv3UQ!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"short_description\":\"Create incident via postman\",\r\n\"description\": \"My Malar first incident\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev221020.service-now.com/api/now/table/:tableName",
+					"protocol": "https",
+					"host": [
+						"dev221020",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "incident"
+						}
+					]
+				},
+				"description": "Incedent created from my account\n\n\\[ServiceNow Documentation\\]([https://dev221020.service-now.com/now/nav/ui/classic/params/target/$restapi.do](https://dev221020.service-now.com/now/nav/ui/classic/params/target/%24restapi.do)[https://dev221020.service-now.com/now/nav/ui/classic/params/target/$restapi.do](https://dev221020.service-now.com/now/nav/ui/classic/params/target/%24restapi.do))"
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Change_Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify Status Code\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "t/xhS8Pv3UQ!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"short_description\":\"Create incident via postman\",\r\n\"description\": \"My Malar first incident\" \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev221020.service-now.com/api/now/table/:tableName",
+					"protocol": "https",
+					"host": [
+						"dev221020",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						":tableName"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "change_request"
+						}
+					]
+				},
+				"description": "Incedent created from my account\n\n\\[ServiceNow Documentation\\]([https://dev221020.service-now.com/now/nav/ui/classic/params/target/$restapi.do](https://dev221020.service-now.com/now/nav/ui/classic/params/target/%24restapi.do)[https://dev221020.service-now.com/now/nav/ui/classic/params/target/$restapi.do](https://dev221020.service-now.com/now/nav/ui/classic/params/target/%24restapi.do))"
+			},
+			"response": []
+		}
+	]
+}
